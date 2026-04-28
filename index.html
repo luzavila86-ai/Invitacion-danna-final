@@ -1,0 +1,191 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis 15 Años - DANNA CAMILA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+
+    /* 🎨 FONDO VAN GOGH REAL */
+    background: url('https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Starry_Night.JPG') no-repeat center center/cover;
+}
+
+/* capa oscura elegante */
+.overlay{
+    background: rgba(0,0,0,0.65);
+    min-height:100vh;
+    padding:40px 20px;
+}
+
+/* ⭐ estrellas animadas */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    background: transparent;
+}
+
+.stars::after{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    box-shadow:
+    100px 200px white,
+    200px 300px white,
+    300px 100px white,
+    400px 500px white,
+    600px 200px white,
+    800px 400px white,
+    900px 150px white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:0.3;}
+    to{opacity:1;}
+}
+
+/* ✨ título */
+h1{
+    font-family:'Playfair Display', serif;
+    font-size:50px;
+    color:gold;
+    margin-top:50px;
+}
+
+/* 🎨 efecto pincel */
+.nombre{
+    font-size:48px;
+    font-weight:bold;
+    text-transform:uppercase;
+    display:inline-block;
+    overflow:hidden;
+    border-right:3px solid gold;
+    white-space:nowrap;
+    animation: escribir 4s steps(20), blink .7s infinite;
+}
+
+@keyframes escribir{
+    from{width:0}
+    to{width:100%}
+}
+
+@keyframes blink{
+    50%{border-color:transparent}
+}
+
+.sub{
+    letter-spacing:4px;
+    margin-top:10px;
+}
+
+/* 🎶 botón */
+.boton{
+    margin-top:30px;
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:gold;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.boton:hover{
+    transform:scale(1.1);
+}
+
+/* texto */
+.info{
+    max-width:600px;
+    margin:40px auto;
+    line-height:1.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="overlay">
+
+<h1>Mis 15 Años</h1>
+
+<div class="nombre">DANNA CAMILA</div>
+<div class="sub">BARRERA AVILA</div>
+
+<div class="info">
+<p>
+Bajo una noche llena de estrellas, queremos celebrar esta fecha tan especial contigo.
+</p>
+
+<p>
+Tenemos el honor de invitarte a la celebración de los 15 años de<br>
+<b>DANNA CAMILA BARRERA AVILA</b>
+</p>
+
+<p>
+📅 1 de agosto de 2026<br>
+🕖 7:00 PM
+</p>
+
+<p>
+👗 Dress Code:<br>
+Formal elegante (damas y caballeros)<br>
+🚫 Evitar color azul oscuro
+</p>
+
+<p>
+📍 Lugar:<br>
+Centro Cultural Casa Claret - Bosa Centro<br>
+Calle 63 Sur # 80C - 80
+</p>
+
+<button class="boton" onclick="window.open('https://maps.google.com')">
+Ver ubicación
+</button>
+
+<p style="margin-top:40px; font-style:italic;">
+✨ Tu presencia hará esta noche aún más especial ✨
+</p>
+
+<button class="boton" onclick="activarMusica()">
+🎵 Activar música
+</button>
+
+</div>
+
+</div>
+
+<!-- 🎵 música -->
+<audio id="musica" loop>
+<source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
+</audio>
+
+<script>
+function activarMusica(){
+    document.getElementById("musica").play();
+}
+</script>
+
+</body>
+</html> 
