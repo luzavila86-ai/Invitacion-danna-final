@@ -12,7 +12,7 @@ body {
     overflow: hidden;
 }
 
-/*   PORTADA */
+/* PORTADA */
 #portada {
     width: 100%;
     height: 100vh;
@@ -41,7 +41,7 @@ body {
     z-index: 10;
 }
 
-/*   INVITACIÓN */
+/* INVITACIÓN */
 #invitacion {
     display: none;
     width: 100%;
@@ -51,7 +51,7 @@ body {
     position: relative;
 }
 
-/* OVERLAY OSCURO */
+/* OVERLAY */
 #invitacion::before {
     content: "";
     position: absolute;
@@ -102,7 +102,7 @@ h2 {
     font-weight: bold;
 }
 
-/*   BOTÓN AUDIO */
+/* BOTÓN AUDIO */
 #audioBtn {
     position: fixed;
     bottom: 20px;
@@ -115,14 +115,14 @@ h2 {
     z-index: 999;
 }
 
-/*   COUNTDOWN */
+/* COUNTDOWN */
 #countdown {
     font-size: 22px;
     color: gold;
     margin-top: 15px;
 }
 
-/*   QR */
+/* QR */
 .qr-box {
     margin-top: 20px;
 }
@@ -133,7 +133,7 @@ h2 {
     border: 3px solid gold;
 }
 
-/*   SOBRES ANIMADOS */
+/* SOBRES */
 .sobre {
     position: fixed;
     top: -20px;
@@ -154,14 +154,13 @@ h2 {
 
 <body>
 
-<!--   AUDIO -->
+<!-- AUDIO -->
 <audio id="musica" loop>
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<!--   PORTADA -->
+<!-- PORTADA -->
 <div id="portada">
-
     <video autoplay muted playsinline loop id="videoPrincipal">
         <source src="video.mp4" type="video/mp4">
     </video>
@@ -169,103 +168,97 @@ h2 {
     <div class="btn-entrar" onclick="entrar()">
         Entrar
     </div>
-
 </div>
 
-<!--   INVITACIÓN -->
+<!-- INVITACIÓN -->
 <div id="invitacion">
 
 <div class="contenido">
-
     <h1>Mis 15 Años</h1>
 
     <img src="danna.jpg" class="foto">
 
     <h2>DANNA CAMILA</h2>
-<p>
-    Bajo una noche llena de estrellas queremos celebrar esta fecha especial contigo.
+
+    <p>
+    Sus padres Luz Adriana Avila y Juan Carlos Barrera tenemos el honor de invitarte a la celebración de sus 15 años.
     </p>
 
     <p>
-    Sus padres Luz Adriana Avila y Juan Carlos Barrera Tenemos el honor de invitarte a la celebración de los 15 años de
-    <strong>CAMILA</strong>
+    Bajo una noche llena de estrellas queremos celebrar esta fecha especial contigo.
     </p>
 
-
-
-
-
     <p>1 de agosto de 2026 - 7:00 PM</p>
-
     <p>Bosa Centro - Casa Claret</p>
-<p>Calle 63 Sur No 80 C 90</p>
+    <p>Calle 63 Sur No 80 C 90</p>
 
-    <!--   COUNTDOWN -->
+    <!-- COUNTDOWN -->
     <div id="countdown"></div>
 
     <!-- BOTONES -->
     <a class="boton" href="https://maps.google.com" target="_blank">Ver ubicación</a>
-    <a class="boton" href=" https://forms.gle/1TE7DMvjLagUnAVj9" target="_blank">Confirmar asistencia</a>
 
-    <!--   QR ALBUM -->
-   <div class="qr-box">
-    <p>Álbum de fotos 📷</p>
-
-    <a href="https://photos.app.goo.gl/quPGHUCvF335gAPu9"_blank">
-        <img src="qr.jpg" alt="QR álbum de fotos">
+    <a class="boton" href="https://forms.gle/1TE7DMvjLagUnAVj9" target="_blank">
+        Confirmar asistencia
     </a>
 
-    <br>
+    <!-- QR -->
+    <div class="qr-box">
+        <p>Álbum de fotos 📷</p>
 
-    <a class="boton" href="https://TU-LINK-DE-GOOGLE-FOTOS" target="_blank">
-        Abrir álbum de fotos
-    </a>
+        <a href="https://photos.app.goo.gl/quPGHUCvF335gAPu9" target="_blank">
+            <img src="qr.jpg" alt="QR álbum">
+        </a>
+
+        <br>
+
+        <a class="boton" href="https://photos.app.goo.gl/quPGHUCvF335gAPu9" target="_blank">
+            Abrir álbum de fotos
+        </a>
+    </div>
+
+</div>
 </div>
 
-</div>
-
-<!--   AUDIO BTN -->
-<div id="audioBtn" onclick="toggleAudio()"> </div>
+<!-- BOTÓN AUDIO -->
+<div id="audioBtn" onclick="toggleAudio()">🔇</div>
 
 <script>
+
 const musica = document.getElementById("musica");
 let activo = false;
 
-/*   ENTRAR */
-function entrar() {
-    document.getElementById("portada").style.display = "none";
-    document.getElementById("invitacion").style.display = "block";
-
+/* ENTRAR */
 function entrar() {
     document.getElementById("portada").style.display = "none";
     document.getElementById("invitacion").style.display = "block";
 
     setTimeout(() => {
+        musica.currentTime = 0;
+        musica.volume = 0.3;
         musica.play().catch(()=>{});
         activo = true;
         document.getElementById("audioBtn").innerHTML = "🔊";
     }, 300);
-}
-    document.getElementById("audioBtn").innerHTML = " ";
 
     iniciarSobres();
     iniciarCuentaRegresiva();
 }
 
-/*   AUDIO */
+/* AUDIO */
 function toggleAudio() {
     if (activo) {
         musica.pause();
         activo = false;
-        document.getElementById("audioBtn").innerHTML = " ";
+        document.getElementById("audioBtn").innerHTML = "🔇";
     } else {
         musica.play();
         activo = true;
-        document.getElementById("audioBtn").innerHTML = " ";
+        document.getElementById("audioBtn").innerHTML = "🔊";
     }
 }
 
-/*   COUNTDOWN */
+/* COUNTDOWN */
 function iniciarCuentaRegresiva() {
     const fecha = new Date("2026-08-01T19:00:00").getTime();
 
@@ -279,25 +272,28 @@ function iniciarCuentaRegresiva() {
         let segundos = Math.floor((distancia % (1000*60))/1000);
 
         document.getElementById("countdown").innerHTML =
-        `  ${dias}d ${horas}h ${minutos}m ${segundos}s`;
+        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
     }, 1000);
 }
 
-/*   SOBRES */
+/* SOBRES */
 function iniciarSobres() {
     setInterval(() => {
         let sobre = document.createElement("div");
         sobre.classList.add("sobre");
-        sobre.innerHTML = " ";
+        sobre.innerHTML = "✉️";
         sobre.style.left = Math.random() * window.innerWidth + "px";
         sobre.style.animationDuration = (3 + Math.random() * 3) + "s";
+
         document.body.appendChild(sobre);
 
         setTimeout(() => {
             sobre.remove();
         }, 6000);
+
     }, 400);
 }
+
 </script>
 
 </body>
