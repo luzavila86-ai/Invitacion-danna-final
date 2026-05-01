@@ -6,110 +6,15 @@
 
 <title>Mis 15 Años - DANNA CAMILA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<!-- Fuente elegante -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
-<style>
-<div class="contenedor">
-
-  <h2>Mis 15 Años</h2>
-
-  <img src="danna.jpg" class="foto-principal">
-
-  <h1>DANNA CAMILA</h1>
-  <p class="apellido">BARRERA AVILA</p>
-
-</div>
-
-/* FONDO ESTRELLADO */
-.hero {
-  height: 100vh;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/The_Starry_Night.jpg') no-repeat center center;
-background-size: cover;
-    display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9));
-}
-
-/* CONTENIDO PORTADA */
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5em;
-  color: gold;
-  text-shadow: 0 0 20px gold;
-}
-
-/* EFECTO PINCEL REAL */
-.name {
-  font-size: 3.5em;
-  font-weight: bold;
-  background: linear-gradient(90deg, #d4af37, #ffd700, #fff2a8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  overflow: hidden;
-}
-
-.name::after {
-  content: "";
-  position: absolute;
-  left: -100%;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://i.imgur.com/8QfQ9Zb.png');
-  background-size: cover;
-  animation: brush 3s forwards;
-}
-
-@keyframes brush {
-  to { left: 100%; }
-}
-
-.sub {
-  letter-spacing: 5px;
-  margin-top: 10px;
-}
-
-/* TARJETA */
-.card {
-  padding: 40px 20px;
-  background: radial-gradient(circle at top, #020617, #000);
-}
-
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 25px;
-  background: gold;
-  color: black;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
-}
-
-.countdown {
-  font-size: 1.5em;
-  margin-top: 20px;
-}
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/The_Starry_Night.jpg');
+  background-image: url('fondo.jpg'); /* Imagen de fondo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -117,88 +22,79 @@ body {
   color: white;
   text-align: center;
 }
+
+/* Contenedor principal */
+.contenedor {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Texto superior */
+h2 {
+  color: #FFD700;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 10px rgba(255,215,0,0.8);
+}
+
+/* Foto principal */
+.foto-principal {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+
+  border-radius: 50%;
+  border: 5px solid #FFD700;
+
+  box-shadow: 0px 0px 25px rgba(255,215,0,0.6);
+
+  margin-bottom: 20px;
+}
+
+/* Efecto al pasar el mouse */
+.foto-principal:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+/* Nombre */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 55px;
+  color: #FFD700;
+  margin: 10px 0;
+
+  text-shadow:
+    2px 2px 0px #c9a000,
+    4px 4px 10px rgba(0,0,0,0.7);
+}
+
+/* Apellido */
+.apellido {
+  letter-spacing: 3px;
+  font-size: 14px;
+  opacity: 0.9;
+}
 </style>
+
 </head>
 
 <body>
 
-<!-- PORTADA -->
-<section class="hero">
-  <div class="overlay"></div>
+<div class="contenedor">
 
-  <div class="hero-content">
-    <h2 class="title">Mis 15 Años</h2>
-    <h1 class="name">DANNA CAMILA</h1>
-    <p class="sub">BARRERA AVILA</p>
-  </div>
-</section>
+  <h2>Mis 15 Años</h2>
 
-<!-- CONTENIDO -->
-<div class="card">
+  <!-- FOTO DE TU HIJA -->
+  <img src="danna.jpg" class="foto-principal">
 
-<p>📅 1 de agosto de 2026</p>
-<p>🕖 7:00 PM</p>
-
-<p>
-Bajo una noche llena de estrellas, queremos celebrar esta fecha tan especial contigo.<br><br>
-Tenemos el honor de invitarte a la celebración de los 15 años de<br>
-<strong>DANNA CAMILA BARRERA AVILA</strong>
-</p>
-
-<p>
-👗 Dress Code:<br>
-Formal elegante (damas y caballeros)<br>
-🚫 Evitar color azul oscuro
-</p>
-
-<p>
-📍 Lugar:<br>
-Centro Cultural Casa Claret - Bosa Centro<br>
-Calle 63 Sur # 80C - 80
-</p>
-
-<a class="btn" href="https://www.google.com/maps/search/?api=1&query=Casa+Claret+Bosa+Centro">Ver ubicación</a>
-
-<p style="margin-top:20px; font-style:italic;">
-✨ Tu presencia hará esta noche aún más especial ✨
-</p>
-
-<div class="countdown" id="countdown"></div>
-
-<a class="btn" href="https://wa.me/573223371728">Confirmar asistencia</a>
-
-<br><br>
-
-<button class="btn" onclick="playMusic()">🎵 Activar música</button>
-
-<audio id="music" loop autoplay>
-  <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
-</audio>
+  <h1>DANNA CAMILA</h1>
+  <p class="apellido">BARRERA AVILA</p>
 
 </div>
-
-<script>
-// CONTADOR
-var countDownDate = new Date("Aug 1, 2026 19:00:00").getTime();
-
-setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-
-  var d = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var s = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("countdown").innerHTML =
-  d + " días " + h + "h " + m + "m " + s + "s";
-}, 1000);
-
-// MÚSICA
-function playMusic() {
-  document.getElementById("music").play();
-}
-</script>
 
 </body>
 </html> 
