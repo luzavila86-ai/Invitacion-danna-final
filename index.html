@@ -14,19 +14,19 @@ body {
 }
 
 /* VIDEO PORTADA */
-.portada-video {
-    width: 100%;
-    height: 100vh;
-    background: black;
-    overflow: hidden;
-}
+<video autoplay muted playsinline loop id="miVideo" class="video-principal">
+  <source src="video.mp4" type="video/mp4">
+</video>
 
-.video-principal {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
+    <script>
+function activarSonido() {
+  const video = document.getElementById("miVideo");
+  video.muted = false;
+  video.play();
+}
+</script>
+    
 /* BOTÓN ENTRAR */
 .boton-entrar {
     position: absolute;
