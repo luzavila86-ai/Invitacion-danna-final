@@ -223,7 +223,17 @@ function entrar() {
     document.getElementById("portada").style.display = "none";
     document.getElementById("invitacion").style.display = "block";
 
-    musica.play().catch(()=>{});
+    function entrar() {
+    document.getElementById("portada").style.display = "none";
+    document.getElementById("invitacion").style.display = "block";
+
+    setTimeout(() => {
+        musica.play().catch(()=>{});
+        activo = true;
+        document.getElementById("audioBtn").innerHTML = "🔊";
+    }, 300);
+}
+    
     activo = true;
     document.getElementById("audioBtn").innerHTML = " ";
 
