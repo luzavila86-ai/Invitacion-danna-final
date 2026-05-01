@@ -169,6 +169,32 @@ setInterval(() => {
         dias + " días " + horas + "h " + minutos + "m " + segundos + "s";
 }, 1000);
 </script>
+<script>
+let audio = document.getElementById("musica");
+let boton = document.getElementById("boton-musica");
 
+// cuando entra a la invitación
+function mostrarInvitacion() {
+    document.querySelector('.portada-video').style.display = 'none';
+    document.querySelector('.invitacion').style.display = 'block';
+
+    // activar música
+    audio.play();
+    boton.innerHTML = "🔊";
+}
+
+// botón flotante
+function toggleAudio() {
+    if (audio.paused) {
+        audio.play();
+        boton.innerHTML = "🔊";
+    } else {
+        audio.pause();
+        boton.innerHTML = "🔇";
+    }
+}
+</script>
+
+   
 </body>
 </html> 
