@@ -51,7 +51,6 @@ body {
     position: relative;
 }
 
-/* OVERLAY */
 #invitacion::before {
     content: "";
     position: absolute;
@@ -102,7 +101,7 @@ h2 {
     font-weight: bold;
 }
 
-/* BOTÓN AUDIO */
+/* AUDIO BOTÓN */
 #audioBtn {
     position: fixed;
     bottom: 20px;
@@ -149,6 +148,18 @@ h2 {
         opacity: 0;
     }
 }
+
+/* INFO ICONOS */
+.info {
+    margin-top: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.info p {
+    margin: 6px 0;
+}
+
 </style>
 </head>
 
@@ -174,6 +185,7 @@ h2 {
 <div id="invitacion">
 
 <div class="contenido">
+
     <h1>Mis 15 Años</h1>
 
     <img src="danna.jpg" class="foto">
@@ -181,16 +193,20 @@ h2 {
     <h2>DANNA CAMILA</h2>
 
     <p>
-    Sus padres Luz Adriana Avila y Juan Carlos Barrera tenemos el honor de invitarte a la celebración de sus 15 años.
+    Sus padres Luz Adriana Avila y Juan Carlos Barrera tenemos el honor de invitarte a esta celebración.
     </p>
 
-    <p>
-    Bajo una noche llena de estrellas queremos celebrar esta fecha especial contigo.
-    </p>
+    <p>Bajo una noche llena de estrellas queremos celebrar contigo.</p>
 
-    <p>1 de agosto de 2026 - 7:00 PM</p>
-    <p>Bosa Centro - Casa Claret</p>
-    <p>Calle 63 Sur No 80 C 90</p>
+    <!-- 👇 ICONOS NUEVOS -->
+    <div class="info">
+        <p>⏰ <strong>Hora:</strong> 7:00 PM</p>
+        <p>📍 <strong>Lugar:</strong> Bosa Centro - Casa Claret</p>
+        <p>👗 <strong>Vestimenta:</strong> Formal / Elegante</p>
+    </div>
+
+    <!-- FECHA -->
+    <p>1 de agosto de 2026</p>
 
     <!-- COUNTDOWN -->
     <div id="countdown"></div>
@@ -207,20 +223,20 @@ h2 {
         <p>Álbum de fotos 📷</p>
 
         <a href="https://photos.app.goo.gl/quPGHUCvF335gAPu9" target="_blank">
-            <img src="qr.jpg" alt="QR álbum">
+            <img src="qr.jpg">
         </a>
 
         <br>
 
         <a class="boton" href="https://photos.app.goo.gl/quPGHUCvF335gAPu9" target="_blank">
-            Abrir álbum de fotos
+            Abrir álbum
         </a>
     </div>
 
 </div>
 </div>
 
-<!-- BOTÓN AUDIO -->
+<!-- AUDIO BOTÓN -->
 <div id="audioBtn" onclick="toggleAudio()">🔇</div>
 
 <script>
