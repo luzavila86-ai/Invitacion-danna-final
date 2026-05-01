@@ -130,9 +130,21 @@ h2 {
 
 <!-- VIDEO PORTADA -->
 <section class="portada-video">
-    <video autoplay muted playsinline loop class="video-principal">
-        <source src="video.mp4" type="video/mp4">
-    </video>
+   ...
+</section>
+
+<section class="invitacion">
+   ...
+</section>
+
+<!-- BOTÓN (AQUÍ VA) -->
+<div id="boton-musica" onclick="toggleAudio()">🔇</div>
+
+</body>
+</html>
+<video autoplay muted playsinline loop id="videoPrincipal" class="video-principal">
+  <source src="video.mp4" type="video/mp4">
+</video>  
 
     <div class="boton-entrar" onclick="mostrarInvitacion()">
         Entrar
@@ -158,8 +170,7 @@ h2 {
     </p>
 
     <p>
-    Sus padres Luz Adriana Avila y Juan Carlos Barrera 
-        Tenemos el honor de invitarte a la celebración de los 15 años de
+    Sus padres Luz Adriana Avila y Juan Carlos Barrera Tenemos el honor de invitarte a la celebración de los 15 años de
     <strong>DANNA CAMILA BARRERA AVILA</strong>
     </p>
 
@@ -226,7 +237,15 @@ document.addEventListener("click", () => {
 });
 </script>
 
+<!-- contenido -->
+
+<!-- botón -->
+<div id="boton-musica" onclick="toggleAudio()">🔇</div>
+
+<!-- script -->
+<script>
+...
+</script>
+
 </body>
 </html> 
-
-
