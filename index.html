@@ -3,98 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mis 15 Años - DANNA CAMILA</title>
-
-<!-- Fuente elegante -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<title>Mis 15 Años - Danna Camila</title>
 
 <style>
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-
-  background-image: url('fondo.jpg'); /* Imagen de fondo */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  color: white;
-  text-align: center;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
 }
 
-/* Contenedor principal */
-.contenedor {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* PORTADA */
+.hero {
+    background-image: url('fondo.jpg'); /* <-- tu imagen de Van Gogh */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Texto superior */
-h2 {
-  color: #FFD700;
-  font-size: 28px;
-  margin-bottom: 20px;
-  text-shadow: 0px 0px 10px rgba(255,215,0,0.8);
+.overlay {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 10px;
 }
 
-/* Foto principal */
-.foto-principal {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-
-  border-radius: 50%;
-  border: 5px solid #FFD700;
-
-  box-shadow: 0px 0px 25px rgba(255,215,0,0.6);
-
-  margin-bottom: 20px;
-}
-
-/* Efecto al pasar el mouse */
-.foto-principal:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
-}
-
-/* Nombre */
+/* TEXTOS */
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 55px;
-  color: #FFD700;
-  margin: 10px 0;
-
-  text-shadow:
-    2px 2px 0px #c9a000,
-    4px 4px 10px rgba(0,0,0,0.7);
+    color: gold;
+    font-size: 30px;
 }
 
-/* Apellido */
-.apellido {
-  letter-spacing: 3px;
-  font-size: 14px;
-  opacity: 0.9;
+h2 {
+    font-size: 55px;
+    color: gold;
+    margin: 10px 0;
+    text-shadow: 0 0 20px rgba(255,215,0,0.8);
+}
+
+p {
+    margin: 5px;
+}
+
+/* FOTO */
+.foto {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid gold;
+    object-fit: cover;
+    margin: 20px 0;
+    box-shadow: 0 0 25px rgba(255,215,0,0.7);
+}
+
+/* SECCIÓN INFO */
+.info {
+    background: black;
+    padding: 40px 20px;
+}
+
+/* BOTÓN */
+.boton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: gold;
+    color: black;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* CONTADOR */
+.contador {
+    margin-top: 20px;
+    font-size: 20px;
+    color: gold;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="contenedor">
+<!-- PORTADA -->
+<section class="hero">
+    <div class="overlay">
 
-  <h2>Mis 15 Años</h2>
+        <h1>Mis 15 Años</h1>
 
-  <!-- FOTO DE TU HIJA -->
-  <img src="danna.jpg" class="foto-principal">
+        <img src="danna.jpg" class="foto">
 
-  <h1>DANNA CAMILA</h1>
-  <p class="apellido">BARRERA AVILA</p>
+        <h2>DANNA CAMILA</h2>
+        <p>BARRERA AVILA</p>
 
-</div>
+    </div>
+</section>
+
+<!-- INFORMACIÓN -->
+<section class="info">
+
+    <p>📅 1 de agosto de 2026</p>
+    <p>⏰ 7:00 PM</p>
+
+    <br>
+
+    <p>
+    Bajo una noche llena de estrellas, queremos celebrar esta fecha tan especial contigo.
+    </p>
+
+    <p>
+    Tenemos el honor de invitarte a la celebración de los 15 años de
+    <strong>DANNA CAMILA BARRERA AVILA</strong>
+    </p>
+
+    <br>
+
+    <p>👗 Dress Code: Formal elegante</p>
+    <p>🚫 Evitar color azul oscuro</p>
+
+    <br>
+
+    <!-- UBICACIÓN -->
+    <p>📍 Lugar:</p>
+    <p><strong>Centro Cultural Casa Claret - Bosa Centro</strong></p>
+    <p>Calle 63 Sur # 80C - 80</p>
+
+    <a class="boton" href="https://www.google.com/maps?q=Casa+Claret+Bosa+Centro" target="_blank">
+        Ver ubicación
+    </a>
+
+    <br><br>
+
+    <p>✨ Tu presencia hará esta noche aún más especial ✨</p>
+
+    <!-- CONTADOR -->
+    <div class="contador" id="countdown"></div>
+
+</section>
+
+<!-- MÚSICA (OPCIONAL) -->
+<audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SCRIPT CONTADOR -->
+<script>
+const fechaEvento = new Date("August 1, 2026 19:00:00").getTime();
+
+const intervalo = setInterval(() => {
+    const ahora = new Date().getTime();
+    const diferencia = fechaEvento - ahora;
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        dias + " días " + horas + "h " + minutos + "m " + segundos + "s";
+
+}, 1000);
+</script>
 
 </body>
 </html> 
