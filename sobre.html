@@ -5,16 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invitación XV</title>
 
+<!-- 📲 Preview WhatsApp -->
 <meta property="og:title" content="Invitación XV Danna Camila" />
 <meta property="og:description" content="Estás invitado a una noche mágica ✨" />
 <meta property="og:image" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.jpg" />
 <meta property="og:url" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.html" />
 <meta property="og:type" content="website" />
-
-  small {
-  font-family: inherit;
-  letter-spacing: 2px;
-}
 
 <style>
 body{
@@ -24,10 +20,11 @@ body{
   justify-content:center;
   align-items:center;
   background: radial-gradient(circle at top, #0b1a3a, #050816 70%);
- font-family: "Playfair Display", "Georgia", serif;
+  font-family: "Georgia", "Times New Roman", serif;
   overflow:hidden;
 }
 
+/* ✨ estrellas */
 body::before{
   content:"";
   position:absolute;
@@ -35,8 +32,10 @@ body::before{
   background-image: radial-gradient(white 1px, transparent 1px);
   background-size: 40px 40px;
   opacity:0.15;
+  pointer-events:none;
 }
 
+/* 💌 tarjeta */
 .card{
   width:360px;
   height:520px;
@@ -50,17 +49,20 @@ body::before{
   animation: appear 1s ease forwards;
 }
 
+/* entrada suave */
 @keyframes appear{
   from{opacity:0; transform:scale(0.8)}
   to{opacity:1; transform:scale(1)}
 }
 
+/* capa oscura */
 .overlay{
   position:absolute;
   inset:0;
   background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(5,8,22,0.85));
 }
 
+/* contenido */
 .content{
   position:absolute;
   inset:0;
@@ -73,23 +75,28 @@ body::before{
   padding:20px;
 }
 
+/* DE */
+small{
+  font-family: inherit;
+  letter-spacing: 2px;
+  opacity:0.9;
+}
+
+/* PARA */
 .para{
   letter-spacing:6px;
   font-size:12px;
   opacity:0.85;
 }
 
+/* nombre */
 h1{
-  font-size:28px;
+  font-size:30px;
   margin:10px 0;
-  font-family: Georgia, serif;
+  font-family: "Georgia", serif;
 }
 
-small{
-  opacity:0.9;
-  font-size:14px;
-}
-
+/* botón */
 button{
   margin-top:22px;
   padding:12px 24px;
@@ -114,6 +121,7 @@ button:hover{
 <div class="overlay"></div>
 
 <div class="content">
+
   <small>DE: Camila Barrera</small>
 
   <div class="para">PARA</div>
@@ -121,6 +129,7 @@ button:hover{
   <h1 id="nombre">Invitado</h1>
 
   <button onclick="abrir()">Abrir invitación ✉️</button>
+
 </div>
 </div>
 
