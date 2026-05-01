@@ -8,27 +8,17 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     color: white;
     text-align: center;
 }
 
-/* PORTADA */
-<section class="portada-video">
-
-  <video autoplay muted playsinline class="video-principal">
-    <source src="video2.mp4" type="video2/mp4">
-  </video>
-
-</section>
-
-    .portada-video {
+/* VIDEO PORTADA */
+.portada-video {
     width: 100%;
     height: 100vh;
     background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 }
 
 .video-principal {
@@ -36,21 +26,27 @@ body {
     height: 100%;
     object-fit: cover;
 }
-/* TEXTOS */
-h1 {
-    color: gold;
-    font-size: 30px;
+
+/* BOTÓN ENTRAR */
+.boton-entrar {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: gold;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-h2 {
-    font-size: 55px;
-    color: gold;
-    margin: 10px 0;
-    text-shadow: 0 0 20px rgba(255,215,0,0.8);
-}
-
-p {
-    margin: 5px;
+/* SECCIÓN INVITACIÓN */
+.invitacion {
+    display: none;
+    background: url('fondo.jpg') no-repeat center;
+    background-size: cover;
+    padding: 40px 20px;
 }
 
 /* FOTO */
@@ -61,19 +57,22 @@ p {
     border: 6px solid gold;
     object-fit: cover;
     margin: 20px 0;
-    box-shadow: 0 0 25px rgba(255,215,0,0.7);
 }
 
-/* SECCIÓN INFO */
-.info {
-    background: black;
-    padding: 40px 20px;
+/* TEXTOS */
+h1 {
+    color: gold;
 }
 
-/* BOTÓN */
+h2 {
+    font-size: 50px;
+    color: gold;
+}
+
+/* BOTONES */
 .boton {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 15px;
     padding: 12px 25px;
     background: gold;
     color: black;
@@ -93,30 +92,32 @@ p {
 
 <body>
 
-<!-- PORTADA -->
-<section class="hero">
-    <div class="overlay">
+<!-- VIDEO PORTADA -->
+<section class="portada-video">
+    <video autoplay muted playsinline loop class="video-principal">
+        <source src="video.mp4" type="video/mp4">
+    </video>
 
-        <h1>Mis 15 Años</h1>
-
-        <img src="danna.jpg" class="foto">
-
-        <h2>DANNA CAMILA</h2>
-        <p>BARRERA AVILA</p>
-
+    <div class="boton-entrar" onclick="mostrarInvitacion()">
+        Entrar
     </div>
 </section>
 
-<!-- INFORMACIÓN -->
-<section class="info">
+<!-- INVITACIÓN -->
+<section class="invitacion" id="invitacion">
+
+    <h1>Mis 15 Años</h1>
+
+    <img src="danna.jpg" class="foto">
+
+    <h2>DANNA CAMILA</h2>
+    <p>BARRERA AVILA</p>
 
     <p>📅 1 de agosto de 2026</p>
     <p>⏰ 7:00 PM</p>
 
-    <br>
-
     <p>
-    Bajo una noche llena de estrellas, queremos celebrar esta fecha tan especial contigo.
+    Bajo una noche llena de estrellas queremos celebrar esta fecha especial contigo.
     </p>
 
     <p>
@@ -124,41 +125,38 @@ p {
     <strong>DANNA CAMILA BARRERA AVILA</strong>
     </p>
 
-    <br>
-
     <p>👗 Dress Code: Formal elegante</p>
-    <p>🚫 Evitar color azul oscuro</p>
 
-    <br>
+    <p>📍 Casa Claret - Bosa Centro</p>
 
-    <!-- UBICACIÓN -->
-    <p>📍 Lugar:</p>
-    <p><strong>Centro Cultural Casa Claret - Bosa Centro</strong></p>
-    <p>Calle 63 Sur # 80C - 80</p>
-
+    <!-- BOTÓN UBICACIÓN -->
     <a class="boton" href="https://www.google.com/maps?q=Casa+Claret+Bosa+Centro" target="_blank">
         Ver ubicación
     </a>
 
-    <br><br>
+    <br>
+
+    <!-- BOTÓN CONFIRMACIÓN -->
+    <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSds-URFVXoHN8SnMTVkHvEs_X92_dDmSUzOBkaG92Pm_el6Ag/viewform?usp=publish-editor" target="_blank">
+        Confirmar asistencia
+    </a>
 
     <p>✨ Tu presencia hará esta noche aún más especial ✨</p>
 
-    <!-- CONTADOR -->
     <div class="contador" id="countdown"></div>
 
 </section>
 
-<!-- MÚSICA (OPCIONAL) -->
-<audio autoplay loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<!-- SCRIPT CONTADOR -->
 <script>
+function mostrarInvitacion() {
+    document.querySelector('.portada-video').style.display = 'none';
+    document.querySelector('.invitacion').style.display = 'block';
+}
+
+/* CONTADOR */
 const fechaEvento = new Date("August 1, 2026 19:00:00").getTime();
 
-const intervalo = setInterval(() => {
+setInterval(() => {
     const ahora = new Date().getTime();
     const diferencia = fechaEvento - ahora;
 
@@ -169,7 +167,6 @@ const intervalo = setInterval(() => {
 
     document.getElementById("countdown").innerHTML =
         dias + " días " + horas + "h " + minutos + "m " + segundos + "s";
-
 }, 1000);
 </script>
 
