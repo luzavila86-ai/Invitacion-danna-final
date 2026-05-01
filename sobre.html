@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invitación XV</title>
-
-<!-- 📲 WhatsApp Preview -->
-<meta property="og:title" content="Invitación XV Danna Camila" />
-<meta property="og:description" content="Estás invitado a una noche mágica ✨" />
-<meta property="og:image" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.jpg" />
-<meta property="og:url" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.html" />
-<meta property="og:type" content="website" />
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
 
 body{
   margin:0;
@@ -24,6 +9,8 @@ body{
   background: radial-gradient(circle at top, #0b1a3a, #050816 70%);
   font-family: 'Playfair Display', serif;
   overflow:hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* estrellas */
@@ -52,7 +39,7 @@ body::before{
 }
 
 @keyframes appear{
-  from{opacity:0; transform:scale(0.8)}
+  from{opacity:0; transform:scale(0.85)}
   to{opacity:1; transform:scale(1)}
 }
 
@@ -76,10 +63,20 @@ body::before{
   padding:20px;
 }
 
+/* 🔥 TODO uniforme */
+small,
+.para,
+h1,
+button{
+  font-family: 'Playfair Display', serif;
+  font-weight:400;
+  letter-spacing:1px;
+  color:white;
+}
+
 /* DE */
 small{
   font-size:14px;
-  letter-spacing:1px;
   opacity:0.9;
 }
 
@@ -87,15 +84,15 @@ small{
 .para{
   margin-top:10px;
   font-size:12px;
-  letter-spacing:4px;
+  letter-spacing:3px;
   opacity:0.85;
 }
 
 /* nombre */
 h1{
   font-size:32px;
+  font-weight:500;
   margin:10px 0;
-  font-weight:600;
 }
 
 /* botón */
@@ -106,53 +103,11 @@ button{
   color:#050816;
   border:none;
   border-radius:30px;
-  font-weight:bold;
+  font-weight:600;
   cursor:pointer;
   transition:0.3s;
-  font-family: 'Playfair Display', serif;
 }
 
 button:hover{
   transform:scale(1.05);
-}
-</style>
-</head>
-
-<body>
-
-<div class="card" id="card">
-<div class="overlay"></div>
-
-<div class="content">
-
-  <small>DE: Camila Barrera</small>
-
-  <div class="para">PARA</div>
-
-  <h1 id="nombre">Invitado</h1>
-
-  <button onclick="abrir()">Abrir invitación ✉️</button>
-
-</div>
-</div>
-
-<script>
-const params = new URLSearchParams(window.location.search);
-const nombre = params.get("nombre");
-
-if(nombre){
-  document.getElementById("nombre").textContent = nombre;
-}
-
-function abrir(){
-  document.getElementById("card").style.transform = "scale(1.05)";
-  document.getElementById("card").style.opacity = "0.8";
-
-  setTimeout(()=>{
-    window.location.href = "https://luzavila86-ai.github.io/Invitacion-danna-final/";
-  }, 700);
-}
-</script>
-
-</body>
-</html> 
+} 
