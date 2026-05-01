@@ -207,10 +207,14 @@ h2 {
       
 </a>
         <p>👗 <strong>Vestimenta:</strong> Formal / Elegante</p>
+<p>Se omite el color azul oscuro en todas sus tonalidades</p>
+
+  <p>✉️ <strong>:</strong> Lluvia de sobres</p>
     </div>
 
     <!-- FECHA -->
     <p>1 de agosto de 2026</p>
+<p>Contacto: 3223371728</p>
 
     <!-- COUNTDOWN -->
     <div id="countdown"></div>
@@ -301,7 +305,7 @@ function iniciarSobres() {
     setInterval(() => {
         let sobre = document.createElement("div");
         sobre.classList.add("sobre");
-        sobre.innerHTML = "✉️";
+        sobre.innerHTML = " ";
         sobre.style.left = Math.random() * window.innerWidth + "px";
         sobre.style.animationDuration = (3 + Math.random() * 3) + "s";
 
