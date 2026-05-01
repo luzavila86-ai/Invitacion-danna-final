@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación XV</title>
+
+<!-- 📲 Preview WhatsApp -->
+<meta property="og:title" content="Invitación XV Danna Camila" />
+<meta property="og:description" content="Estás invitado a una noche mágica ✨" />
+<meta property="og:image" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.jpg" />
+<meta property="og:url" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.html" />
+<meta property="og:type" content="website" />
+
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
 
 body{
@@ -13,7 +28,7 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* estrellas */
+/* ✨ estrellas */
 body::before{
   content:"";
   position:absolute;
@@ -24,7 +39,7 @@ body::before{
   pointer-events:none;
 }
 
-/* tarjeta */
+/* 💌 tarjeta */
 .card{
   width:360px;
   height:520px;
@@ -38,12 +53,13 @@ body::before{
   animation: appear 1s ease forwards;
 }
 
+/* animación entrada */
 @keyframes appear{
   from{opacity:0; transform:scale(0.85)}
   to{opacity:1; transform:scale(1)}
 }
 
-/* overlay */
+/* overlay oscuro */
 .overlay{
   position:absolute;
   inset:0;
@@ -84,30 +100,4 @@ small{
 .para{
   margin-top:10px;
   font-size:12px;
-  letter-spacing:3px;
-  opacity:0.85;
-}
-
-/* nombre */
-h1{
-  font-size:32px;
-  font-weight:500;
-  margin:10px 0;
-}
-
-/* botón */
-button{
-  margin-top:22px;
-  padding:12px 24px;
-  background:white;
-  color:#050816;
-  border:none;
-  border-radius:30px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover{
-  transform:scale(1.05);
-} 
+  letter 
