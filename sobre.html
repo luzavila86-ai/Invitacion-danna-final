@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación XV</title><!-- Vista previa para WhatsApp --><meta property="og:title" content="Invitación XV Danna Camila" />
+<meta property="og:description" content="Estás invitado a una noche mágica ✨" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1534447677768-be436bb09401" /><style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: radial-gradient(circle at top, #0b1a3a, #050816 70%);
+  font-family:Arial;
+  overflow:hidden;
+}
+
+/* estrellas */
+body::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity:0.15;
+}
+
+.card{
+  width:360px;
+  height:520px;
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+  background:url("https://images.unsplash.com/photo-1534447677768-be436bb09401");
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.7);
+  transform:scale(0.95);
+  animation: appear 1s ease forwards;
+}
+
+@keyframes appear{
+  from{opacity:0; transform:scale(0.8)}
+  to{opacity:1; transform:scale(1)}
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(5,8,22,0.85));
+}
+
+.content{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:20px;
+}
+
+.para{
+  letter-spacing:6px;
+  font-size:12px;
+  opacity:0.85;
+}
+
+h1{
+  font-size:30px;
+  margin:10px 0;
+  font-family: Georgia, serif;
+}
+
+button{
+  margin-top:22px;
+  padding:12px 24px;
+  background:white;
+  color:#050816;
+  border:none;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+/* animación de apertura */
+.open{
+  animation: openCard 0.8s ease forwards;
+}
+
+@keyframes openCard{
+  to{transform:scale(1) translateY(-10px); opacity:1}
+}
+</style></head><body><div class="card" id="card">
+<div class="overlay"></div><div class="content">
+  <div class="para">PARA</div>  <h1 id="nombre">Invitado</h1><button onclick="abrir()">Abrir invitación ✉️</button>
+
+</div>
+</div><script>
+const params = new URLSearchParams(window.location.search);
+const nombre = params.get("nombre");
+
+if(nombre){
+  document.getElementById("nombre").textContent = nombre;
+}
+
+function abrir(){
+  document.getElementById("card").classList.add("open");
+  setTimeout(()=>{
+    window.location.href = "https://luzavila86-ai.github.io/invitacion-danna/";
+  }, 800);
+}
+</script></body>
+</html> 
