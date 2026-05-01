@@ -1,3 +1,6 @@
+Link fotos: https://photos.app.goo.gl/quPGHUCvF335gAPu9
+Link asistencia: https://forms.gle/1TE7DMvjLagUnAVj9
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,150 +12,172 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
-}
-
-/* VIDEO PORTADA */
-.portada-video {
-    width: 100%;
-    height: 100vh;
-    background: black;
     overflow: hidden;
 }
 
-.video-principal {
+/*   PORTADA */
+#portada {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: black;
+}
+
+#videoPrincipal {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 /* BOTÓN ENTRAR */
-.boton-entrar {
+.btn-entrar {
     position: absolute;
-    bottom: 40px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     background: gold;
     color: black;
-    padding: 12px 25px;
-    border-radius: 25px;
+    padding: 14px 28px;
+    border-radius: 30px;
     font-weight: bold;
     cursor: pointer;
+    z-index: 10;
 }
 
-/* INVITACIÓN */
-.invitacion {
+/*   INVITACIÓN */
+#invitacion {
     display: none;
-    background: url('fondo6.jpg') no-repeat center;
+    width: 100%;
+    min-height: 100vh;
+    background: url('fondo6.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
 }
 
-/* CAPA OSCURA PARA CONTRASTE */
-.invitacion::before {
+/* OVERLAY OSCURO */
+#invitacion::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.6);
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 0;
 }
 
-/* CONTENIDO ENCIMA */
+/* CONTENIDO */
 .contenido {
     position: relative;
+    z-index: 2;
+    text-align: center;
     padding: 40px 20px;
 }
 
 /* FOTO */
 .foto {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 6px solid gold;
+    border: 5px solid gold;
     object-fit: cover;
-    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
 /* TEXTOS */
-h1, h2, p {
-    position: relative;
-}
-
-h1 {
-    color: black;
+h1, p {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
 }
 
 h2 {
-    font-size: 50px;
     color: gold;
-    text-shadow: 0 0 20px rgba(255,215,0,0.8);
+    font-size: 40px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
 }
 
 /* BOTONES */
 .boton {
     display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
+    margin: 10px;
+    padding: 12px 22px;
     background: gold;
     color: black;
-    text-decoration: none;
     border-radius: 25px;
+    text-decoration: none;
     font-weight: bold;
 }
 
-/* CONTADOR */
-.contador {
-    margin-top: 20px;
-    font-size: 20px;
-    color: gold;
-}
-
-/* BOTÓN MÚSICA */
-#boton-musica {
+/*   BOTÓN AUDIO */
+#audioBtn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: gold;
     color: black;
-    font-size: 20px;
-    padding: 10px 15px;
+    padding: 12px;
     border-radius: 50%;
     cursor: pointer;
     z-index: 999;
+}
+
+/*   COUNTDOWN */
+#countdown {
+    font-size: 22px;
+    color: gold;
+    margin-top: 15px;
+}
+
+/*   QR */
+.qr-box {
+    margin-top: 20px;
+}
+
+.qr-box img {
+    width: 150px;
+    border-radius: 10px;
+    border: 3px solid gold;
+}
+
+/*   SOBRES ANIMADOS */
+.sobre {
+    position: fixed;
+    top: -20px;
+    font-size: 20px;
+    animation: caer linear forwards;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+@keyframes caer {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO PORTADA -->
-<section class="portada-video">
-   ...
-</section>
+<!--   AUDIO -->
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
-<section class="invitacion">
-   ...
-</section>
+<!--   PORTADA -->
+<div id="portada">
 
-<!-- BOTÓN (AQUÍ VA) -->
-<div id="boton-musica" onclick="toggleAudio()">🔇</div>
+    <video autoplay muted playsinline loop id="videoPrincipal">
+        <source src="video.mp4" type="video/mp4">
+    </video>
 
-</body>
-</html>
-<video autoplay muted playsinline loop id="videoPrincipal" class="video-principal">
-  <source src="video.mp4" type="video/mp4">
-</video>  
-
-    <div class="boton-entrar" onclick="mostrarInvitacion()">
+    <div class="btn-entrar" onclick="entrar()">
         Entrar
     </div>
-</section>
 
-<!-- INVITACIÓN -->
-<section class="invitacion" id="invitacion">
+</div>
+
+<!--   INVITACIÓN -->
+<div id="invitacion">
+
 <div class="contenido">
 
     <h1>Mis 15 Años</h1>
@@ -160,91 +185,101 @@ h2 {
     <img src="danna.jpg" class="foto">
 
     <h2>DANNA CAMILA</h2>
-    <p>BARRERA AVILA</p>
 
-    <p>  1 de agosto de 2026</p>
-    <p>  7:00 PM</p>
+    <p>1 de agosto de 2026 - 7:00 PM</p>
 
-    <p>
-    Bajo una noche llena de estrellas queremos celebrar esta fecha especial contigo.
-    </p>
+    <p>Bosa Centro - Casa Claret</p>
 
-    <p>
-    Sus padres Luz Adriana Avila y Juan Carlos Barrera Tenemos el honor de invitarte a la celebración de los 15 años de
-    <strong>DANNA CAMILA BARRERA AVILA</strong>
-    </p>
+    <!--   COUNTDOWN -->
+    <div id="countdown"></div>
 
-    <p>  Dress Code: Formal elegante</p>
+    <!-- BOTONES -->
+    <a class="boton" href="https://maps.google.com" target="_blank">Ver ubicación</a>
+    <a class="boton" href=" https://forms.gle/1TE7DMvjLagUnAVj9" target="_blank">Confirmar asistencia</a>
 
-    <p>  Casa Claret - Bosa Centro</p>
+    <!--   QR ALBUM -->
+   <div class="qr-box">
+    <p>Álbum de fotos 📷</p>
 
-    <a class="boton" href="https://www.google.com/maps?q=Casa+Claret+Bosa+Centro" target="_blank">
-        Ver ubicación
+    <a href="https://photos.app.goo.gl/quPGHUCvF335gAPu9"_blank">
+        <img src="qr.jpg" alt="QR álbum de fotos">
     </a>
 
     <br>
 
-<a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSds-URFVXoHN8SnMTVkHvEs_X92_dDmSUzOBkaG92Pm_el6Ag/viewform?usp=publish-editor" target="_blank">
-        Confirmar asistencia  
+    <a class="boton" href="https://TU-LINK-DE-GOOGLE-FOTOS" target="_blank">
+        Abrir álbum de fotos
     </a>
-
-    <p>  Tu presencia hará esta noche aún más especial  </p>
-
-    <div class="contador" id="countdown"></div>
+</div>
 
 </div>
-</section>
 
-<!-- BOTÓN MÚSICA -->
-<div id="boton-musica" onclick="toggleAudio()"> </div>
+<!--   AUDIO BTN -->
+<div id="audioBtn" onclick="toggleAudio()"> </div>
 
-<!-- AUDIO -->
-<audio id="musica" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<!-- SCRIPT -->
 <script>
-const audio = document.getElementById("musica");
-const boton = document.getElementById("boton-musica");
+const musica = document.getElementById("musica");
+let activo = false;
 
-// mostrar invitación y activar música
-function mostrarInvitacion() {
-    document.querySelector('.portada-video').style.display = 'none';
-    document.querySelector('.invitacion').style.display = 'block';
+/*   ENTRAR */
+function entrar() {
+    document.getElementById("portada").style.display = "none";
+    document.getElementById("invitacion").style.display = "block";
 
-    audio.play();
-    audio.volume = 0.5;
-    boton.innerHTML = " ";
+    musica.play().catch(()=>{});
+    activo = true;
+    document.getElementById("audioBtn").innerHTML = " ";
+
+    iniciarSobres();
+    iniciarCuentaRegresiva();
 }
 
-// botón flotante
+/*   AUDIO */
 function toggleAudio() {
-    if (audio.paused) {
-        audio.play();
-        boton.innerHTML = " ";
+    if (activo) {
+        musica.pause();
+        activo = false;
+        document.getElementById("audioBtn").innerHTML = " ";
     } else {
-        audio.pause();
-        boton.innerHTML = " ";
+        musica.play();
+        activo = true;
+        document.getElementById("audioBtn").innerHTML = " ";
     }
 }
 
-// respaldo para móviles (primer toque activa sonido)
-document.addEventListener("click", () => {
-    if (audio.paused) {
-        audio.play().catch(() => {});
-    }
-});
-</script>
+/*   COUNTDOWN */
+function iniciarCuentaRegresiva() {
+    const fecha = new Date("2026-08-01T19:00:00").getTime();
 
-<!-- contenido -->
+    setInterval(() => {
+        let ahora = new Date().getTime();
+        let distancia = fecha - ahora;
 
-<!-- botón -->
-<div id="boton-musica" onclick="toggleAudio()">🔇</div>
+        let dias = Math.floor(distancia / (1000*60*60*24));
+        let horas = Math.floor((distancia % (1000*60*60*24))/(1000*60*60));
+        let minutos = Math.floor((distancia % (1000*60*60))/(1000*60));
+        let segundos = Math.floor((distancia % (1000*60))/1000);
 
-<!-- script -->
-<script>
-...
+        document.getElementById("countdown").innerHTML =
+        `  ${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }, 1000);
+}
+
+/*   SOBRES */
+function iniciarSobres() {
+    setInterval(() => {
+        let sobre = document.createElement("div");
+        sobre.classList.add("sobre");
+        sobre.innerHTML = " ";
+        sobre.style.left = Math.random() * window.innerWidth + "px";
+        sobre.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(sobre);
+
+        setTimeout(() => {
+            sobre.remove();
+        }, 6000);
+    }, 400);
+}
 </script>
 
 </body>
