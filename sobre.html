@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invitación XV</title>
 
-<!-- WhatsApp preview -->
+<!-- Vista previa WhatsApp -->
 <meta property="og:title" content="Invitación XV Danna Camila" />
 <meta property="og:description" content="Estás invitado a una noche mágica ✨" />
 <meta property="og:image" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.jpg" />
 <meta property="og:url" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.html" />
 
+<!-- Fuente elegante -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
@@ -25,7 +26,7 @@ body{
   font-family:'Great Vibes', cursive;
 }
 
-/* ✨ tarjeta con zoom suave */
+/* tarjeta */
 .card{
   width:360px;
   height:520px;
@@ -33,11 +34,10 @@ body{
   border-radius:20px;
   overflow:hidden;
   box-shadow:0 15px 40px rgba(0,0,0,0.6);
-
   animation: respirar 6s ease-in-out infinite;
 }
 
-/* zoom leve */
+/* zoom suave */
 @keyframes respirar{
   0%,100%{ transform:scale(1); }
   50%{ transform:scale(1.02); }
@@ -50,14 +50,14 @@ body{
   object-fit:cover;
 }
 
-/* overlay oscuro */
+/* overlay */
 .overlay{
   position:absolute;
   inset:0;
   background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
 }
 
-/* ✨ brillo elegante */
+/* brillo elegante */
 .brillo{
   position:absolute;
   top:0;
@@ -129,6 +129,7 @@ button:hover{
 
 <div class="card">
 
+  <!-- imagen -->
   <img src="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.jpg">
 
   <div class="overlay"></div>
@@ -139,9 +140,9 @@ button:hover{
 
     <div class="de">De: Camila Barrera</div>
 
-    <div class="para">Para</div>
+    <div class="para">Para:</div>
 
-    <div class="nombre" id="nombre">Danna Camila Barrera Ávila</div>
+    <div class="nombre" id="nombre">Invitado</div>
 
     <button onclick="abrir()">Abrir invitación ✉️</button>
 
@@ -151,4 +152,18 @@ button:hover{
 
 <script>
 // nombre dinámico
-const params = new 
+const params = new URLSearchParams(window.location.search);
+const nombre = params.get("nombre");
+
+if(nombre && nombre.trim() !== ""){
+  document.getElementById("nombre").textContent = nombre;
+}
+
+// botón
+function abrir(){
+  window.location.href = "https://luzavila86-ai.github.io/Invitacion-danna-final/";
+}
+</script>
+
+</body>
+</html> 
