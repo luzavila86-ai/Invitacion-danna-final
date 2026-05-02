@@ -11,7 +11,6 @@
 <meta property="og:image" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.jpg" />
 <meta property="og:url" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.html" />
 
-<!-- Fuente cursiva elegante -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
@@ -26,38 +25,7 @@ body{
   font-family:'Great Vibes', cursive;
 }
 
-/* ⭐ estrellas */
-.estrellas{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-}
-
-.estrella{
-  position:absolute;
-  width:4px;
-  height:4px;
-  background:white;
-  border-radius:50%;
-  opacity:0.8;
-  animation: caer linear infinite;
-}
-
-@keyframes caer{
-  from{
-    transform:translateY(-10px);
-    opacity:0;
-  }
-  to{
-    transform:translateY(100vh);
-    opacity:1;
-  }
-}
-
-/* tarjeta */
+/* ✨ tarjeta con zoom suave */
 .card{
   width:360px;
   height:520px;
@@ -65,6 +33,14 @@ body{
   border-radius:20px;
   overflow:hidden;
   box-shadow:0 15px 40px rgba(0,0,0,0.6);
+
+  animation: respirar 6s ease-in-out infinite;
+}
+
+/* zoom leve */
+@keyframes respirar{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.02); }
 }
 
 /* imagen */
@@ -74,11 +50,28 @@ body{
   object-fit:cover;
 }
 
-/* overlay */
+/* overlay oscuro */
 .overlay{
   position:absolute;
   inset:0;
   background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+}
+
+/* ✨ brillo elegante */
+.brillo{
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform:skewX(-20deg);
+  animation: brillo 6s infinite;
+}
+
+@keyframes brillo{
+  0%{ left:-100%; }
+  100%{ left:130%; }
 }
 
 /* contenido */
@@ -93,12 +86,11 @@ body{
   color:white;
 }
 
-/* todo uniforme */
+/* textos */
 .de, .para, .nombre{
   font-family:'Great Vibes', cursive;
 }
 
-/* tamaños */
 .de{
   font-size:26px;
 }
@@ -112,10 +104,51 @@ body{
   margin-top:10px;
   font-size:38px;
 }
+
+/* botón */
+button{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:25px;
+  background:white;
+  color:#050816;
+  font-size:18px;
+  font-family:'Great Vibes', cursive;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
 </style>
 </head>
 
 <body>
 
-<!-- estrellas -->
-<div class="estrellas" id="est 
+<div class="card">
+
+  <img src="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.jpg">
+
+  <div class="overlay"></div>
+
+  <div class="brillo"></div>
+
+  <div class="content">
+
+    <div class="de">De: Camila Barrera</div>
+
+    <div class="para">Para</div>
+
+    <div class="nombre" id="nombre">Danna Camila Barrera Ávila</div>
+
+    <button onclick="abrir()">Abrir invitación ✉️</button>
+
+  </div>
+
+</div>
+
+<script>
+// nombre dinámico
+const params = new 
