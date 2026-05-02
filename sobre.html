@@ -5,99 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invitación XV</title>
 
-<!-- 📲 Preview WhatsApp -->
 <meta property="og:title" content="Invitación XV Danna Camila" />
 <meta property="og:description" content="Estás invitado a una noche mágica ✨" />
 <meta property="og:image" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.jpg" />
 <meta property="og:url" content="https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.html" />
-<meta property="og:type" content="website" />
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
-
 body{
   margin:0;
   height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  background: radial-gradient(circle at top, #0b1a3a, #050816 70%);
-  font-family: 'Playfair Display', serif;
-  overflow:hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background:#050816;
+  font-family:Arial;
 }
 
-/* ✨ estrellas */
-body::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity:0.15;
-  pointer-events:none;
-}
-
-/* 💌 tarjeta */
 .card{
-  width:360px;
-  height:520px;
-  border-radius:22px;
-  overflow:hidden;
-  position:relative;
-  background:url("https://luzavila86-ai.github.io/Invitacion-danna-final/sobre.jpg");
-  background-size:cover;
-  background-position:center;
-  box-shadow:0 20px 50px rgba(0,0,0,0.7);
-  animation: appear 1s ease forwards;
-}
-
-/* animación entrada */
-@keyframes appear{
-  from{opacity:0; transform:scale(0.85)}
-  to{opacity:1; transform:scale(1)}
-}
-
-/* overlay oscuro */
-.overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(5,8,22,0.85));
-}
-
-/* contenido */
-.content{
-  position:absolute;
-  inset:0;
+  width:320px;
+  height:480px;
+  background:white;
+  border-radius:20px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center;
-  color:white;
-  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* 🔥 TODO uniforme */
-small,
-.para,
-h1,
+h1{
+  font-size:24px;
+}
+
 button{
-  font-family: 'Playfair Display', serif;
-  font-weight:400;
-  letter-spacing:1px;
-  color:white;
+  margin-top:20px;
+  padding:10px 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1 id="nombre">Invitado</h1>
+  <button onclick="abrir()">Abrir</button>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const nombre = params.get("nombre");
+
+if(nombre){
+  document.getElementById("nombre").textContent = nombre;
 }
 
-/* DE */
-small{
-  font-size:14px;
-  opacity:0.9;
+function abrir(){
+  window.location.href = "https://luzavila86-ai.github.io/Invitacion-danna-final/";
 }
+</script>
 
-/* PARA */
-.para{
-  margin-top:10px;
-  font-size:12px;
-  letter 
+</body>
+</html> 
